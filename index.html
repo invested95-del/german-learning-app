@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deutsch Lernen – German Learning App</title>
+  <link rel="stylesheet" href="base.css"/>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-flag">🇩🇪</span>
+      <span class="logo-text">Deutsch<em>Lernen</em></span>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html"       class="nav-link active">Home</a>
+      <a href="alphabet/alphabet.html"        class="nav-link">Alphabet</a>
+      <a href="numbers/numbers.html"         class="nav-link">Numbers</a>
+      <a href="colours/colours.html"         class="nav-link">Colours</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile drawer -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html"  class="nav-link active">🏠 Home</a>
+    <a href="alphabet/alphabet.html"   class="nav-link">🔤 Alphabet</a>
+    <a href="numbers/numbers.html"    class="nav-link">🔢 Numbers</a>
+    <a href="colours/colours.html"    class="nav-link">🎨 Colours</a>
+  </nav>
+
+  <!-- ── Main ── -->
+  <main class="home-main">
+
+    <!-- Hero skeleton (shown while fonts/images load) -->
+    <div id="hero-skeleton" class="hero-skeleton">
+      <div class="skeleton-card hero-sk-badge"></div>
+      <div class="skeleton-card hero-sk-title"></div>
+      <div class="skeleton-card hero-sk-sub"></div>
+    </div>
+
+    <!-- Real hero (hidden until reveal) -->
+    <section class="hero" id="hero-content" style="display:none">
+      <div class="hero-eyebrow">Willkommen! 👋</div>
+      <h1 class="hero-title">
+        Learn German<br/>
+        <span class="hero-accent">the fun way.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Master German with interactive sounds, flashcards, and bite-sized lessons.
+        Perfect for absolute beginners!
+      </p>
+    </section>
+
+    <!-- Cards skeleton -->
+    <div id="cards-skeleton" class="cards-grid" style="margin-bottom:64px">
+      <div class="skeleton-card lesson-card-sk"></div>
+      <div class="skeleton-card lesson-card-sk"></div>
+      <div class="skeleton-card lesson-card-sk"></div>
+      <div class="skeleton-card lesson-card-sk"></div>
+    </div>
+
+    <!-- Real lesson cards -->
+    <section class="cards-grid" id="cards-content" style="display:none; margin-bottom:64px">
+
+      <a href="alphabet/alphabet.html" class="lesson-card card-alphabet">
+        <div class="card-icon">🔤</div>
+        <div class="card-badge">26 Letters</div>
+        <h2 class="card-title">Das Alphabet</h2>
+        <p class="card-desc">Learn every German letter with native pronunciation audio. Click to hear each one!</p>
+        <div class="card-cta">
+          Start Learning
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="card-deco">A B C</div>
+      </a>
+
+      <a href="numbers/numbers.html" class="lesson-card card-numbers">
+        <div class="card-icon">🔢</div>
+        <div class="card-badge">1 – 20</div>
+        <h2 class="card-title">Die Zahlen</h2>
+        <p class="card-desc">Count from one to twenty in German. Tap any number card to hear authentic pronunciation.</p>
+        <div class="card-cta">
+          Start Learning
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="card-deco">1 2 3</div>
+      </a>
+
+      <a href="colours/colours.html" class="lesson-card card-colours">
+        <div class="card-icon">🎨</div>
+        <div class="card-badge">15 Colours</div>
+        <h2 class="card-title">Die Farben</h2>
+        <p class="card-desc">Discover colours in German with visual swatches and audio. See and hear every Farbe!</p>
+        <div class="card-cta">
+          Start Learning
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="card-deco">🎨</div>
+      </a>
+
+      <div class="lesson-card card-coming-soon">
+        <div class="card-icon">🔜</div>
+        <div class="card-badge">Coming Soon</div>
+        <h2 class="card-title">More Lessons</h2>
+        <p class="card-desc">Animals, greetings, food, days of the week — more lessons are on the way!</p>
+        <div class="card-cta" style="opacity:.4;cursor:default">Stay tuned!</div>
+        <div class="card-deco">...</div>
+      </div>
+
+    </section>
+
+    <!-- Tips section -->
+    <section class="tips-section" id="tips-content" style="display:none">
+      <h3 class="tips-heading">🎯 Quick Tips</h3>
+      <ul class="tips-list">
+        <li><strong>Repeat out loud</strong> — speaking beats silent reading every time.</li>
+        <li><strong>Use headphones</strong> — catch every subtle sound in the audio clips.</li>
+        <li><strong>Practise daily</strong> — even 5 minutes a day builds lasting memory.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ for German learners &nbsp;·&nbsp; <span id="year"></span></p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      revealContent('hero-skeleton',  'hero-content',  300);
+      revealContent('cards-skeleton', 'cards-content', 500);
+      // Tips doesn't need a skeleton — just delayed fade in
+      setTimeout(() => {
+        const tips = document.getElementById('tips-content');
+        if (tips) { tips.style.display = ''; tips.style.animation = 'fadeSlideUp .5s ease both'; }
+      }, 700);
+    });
+  </script>
+</body>
+</html>

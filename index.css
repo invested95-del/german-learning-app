@@ -1,0 +1,119 @@
+/* ============================================
+   DEUTSCH LERNEN – index.css  (Home page)
+   ============================================ */
+
+.home-main{
+  position:relative;z-index:1;
+  max-width:960px;margin:0 auto;
+  padding:56px 24px 80px;width:100%;
+}
+
+/* ── Hero Skeleton ── */
+.hero-skeleton{text-align:center;margin-bottom:64px}
+.hero-sk-badge{
+  width:140px;height:32px;border-radius:50px;
+  margin:0 auto 20px;
+}
+.hero-sk-title{
+  width:60%;height:56px;border-radius:12px;
+  margin:0 auto 16px;
+}
+.hero-sk-sub{
+  width:45%;height:20px;border-radius:8px;
+  margin:0 auto;
+}
+
+/* ── Hero ── */
+.hero{text-align:center;margin-bottom:64px}
+.hero-eyebrow{
+  display:inline-block;
+  background:var(--yellow);color:var(--dark);
+  font-weight:700;font-size:.88rem;padding:6px 18px;
+  border-radius:50px;margin-bottom:18px;letter-spacing:.4px;
+  animation:fadeSlideDown .5s ease both;
+}
+.hero-title{
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem,7vw,4.2rem);
+  font-weight:900;line-height:1.08;letter-spacing:-2px;
+  color:var(--dark);
+  animation:fadeSlideDown .5s .1s ease both;
+}
+.hero-accent{color:var(--red);font-style:italic}
+.hero-subtitle{
+  margin:18px auto 0;font-size:1rem;color:var(--muted);
+  max-width:480px;line-height:1.7;
+  animation:fadeSlideDown .5s .2s ease both;
+}
+
+/* ── Cards Grid ── */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:20px;
+}
+.lesson-card-sk{height:260px}
+
+/* ── Lesson Card ── */
+.lesson-card{
+  position:relative;border-radius:var(--radius-lg);
+  padding:30px 28px 28px;overflow:hidden;
+  display:flex;flex-direction:column;gap:10px;
+  transition:var(--transition);box-shadow:var(--shadow-md);
+  border:2px solid transparent;
+}
+.lesson-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:var(--shadow-lg)}
+
+.card-alphabet   {background:linear-gradient(135deg,#FFF8E7 0%,#FFE0B2 100%)}
+.card-numbers    {background:linear-gradient(135deg,#E8F5FE 0%,#C8E6F5 100%)}
+.card-colours    {background:linear-gradient(135deg,#FEF3FB 0%,#FCE4F5 100%)}
+.card-coming-soon{background:linear-gradient(135deg,#F3F4F6 0%,#E5E7EB 100%);cursor:default}
+.card-coming-soon:hover{transform:none;box-shadow:var(--shadow-md)}
+
+.card-icon  {font-size:2.2rem;line-height:1}
+.card-badge {
+  display:inline-block;font-size:.72rem;font-weight:700;
+  letter-spacing:.8px;text-transform:uppercase;
+  padding:4px 12px;border-radius:50px;
+  background:rgba(0,0,0,.08);color:var(--dark);width:fit-content;
+}
+.card-title {font-family:var(--font-display);font-size:1.75rem;font-weight:900;letter-spacing:-1px;color:var(--dark)}
+.card-desc  {font-size:.9rem;color:var(--muted);line-height:1.6;flex:1}
+.card-cta   {display:flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;color:var(--dark);margin-top:4px}
+.card-alphabet  .card-cta{color:#B45309}
+.card-numbers   .card-cta{color:#0369A1}
+.card-colours   .card-cta{color:#9D174D}
+
+.card-deco{
+  position:absolute;bottom:-10px;right:0;
+  font-family:var(--font-display);font-size:5rem;font-weight:900;
+  opacity:.07;letter-spacing:-4px;pointer-events:none;color:var(--dark);line-height:1;
+}
+
+/* ── Tips Section ── */
+.tips-section{
+  background:var(--white);border-radius:var(--radius-md);
+  padding:28px 32px;box-shadow:var(--shadow-sm);
+}
+.tips-heading{font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:14px}
+.tips-list{display:flex;flex-direction:column;gap:10px}
+.tips-list li{
+  font-size:.9rem;color:var(--muted);line-height:1.6;
+  padding-left:20px;position:relative;
+}
+.tips-list li::before{content:'→';position:absolute;left:0;color:var(--red);font-weight:700}
+
+/* ── Responsive ── */
+@media(max-width:640px){
+  .home-main  {padding:32px 16px 60px}
+  .hero       {margin-bottom:40px}
+  .hero-sk-title{width:85%}
+  .hero-sk-sub  {width:70%}
+  .cards-grid {grid-template-columns:1fr 1fr}
+  .lesson-card{padding:22px 18px 20px}
+  .card-title {font-size:1.4rem}
+  .tips-section{padding:20px 18px}
+}
+@media(max-width:400px){
+  .cards-grid{grid-template-columns:1fr}
+}

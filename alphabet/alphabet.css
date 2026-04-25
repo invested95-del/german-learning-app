@@ -1,0 +1,159 @@
+/* ============================================
+   DEUTSCH LERNEN – alphabet/alphabet.css
+   ============================================ */
+
+/* ── Layout ── */
+.lesson-main{
+  position:relative;z-index:1;
+  max-width:1000px;margin:0 auto;
+  padding:36px 24px 80px;width:100%;flex:1;
+}
+
+/* ── Header ── */
+.lesson-header{margin-bottom:28px}
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.85rem;font-weight:600;color:var(--muted);
+  padding:6px 0;margin-bottom:14px;transition:var(--transition);
+}
+.back-btn:hover{color:var(--dark)}
+.lesson-meta{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.lesson-icon{font-size:2.6rem;line-height:1}
+.lesson-title{
+  font-family:var(--font-display);
+  font-size:clamp(1.7rem,5vw,2.6rem);
+  font-weight:900;letter-spacing:-1.5px;line-height:1.1;
+}
+.lesson-subtitle{font-size:.88rem;color:var(--muted);margin-top:3px}
+
+/* ── Progress ── */
+.progress-wrap{
+  background:var(--white);border-radius:var(--radius-md);
+  padding:14px 18px;box-shadow:var(--shadow-sm);max-width:460px;
+}
+.progress-labels{
+  display:flex;justify-content:space-between;
+  font-size:.78rem;font-weight:600;color:var(--muted);margin-bottom:7px;
+}
+.progress-track{height:7px;background:#E8E8F0;border-radius:4px;overflow:hidden}
+.progress-fill{
+  height:100%;border-radius:4px;width:0%;
+  background:linear-gradient(90deg,var(--red),var(--yellow));
+  transition:width .5s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── Now Playing ── */
+.now-playing{
+  display:flex;align-items:center;gap:10px;
+  background:var(--dark);border-radius:var(--radius-md);
+  padding:13px 22px;margin-bottom:28px;
+  box-shadow:var(--shadow-md);min-height:50px;
+  animation:fadeSlideDown .4s ease both;
+  --np-accent:#FFD93D;
+}
+.np-icon{font-size:1.2rem;flex-shrink:0}
+.np-text{font-size:.9rem;font-weight:500;color:rgba(255,255,255,.72)}
+
+/* ── Skeleton grid ── */
+.letters-skeleton{
+  grid-template-columns:repeat(auto-fill,minmax(90px,1fr));
+  gap:10px;margin-bottom:40px;
+}
+.letter-sk{height:88px}
+
+/* ── Letters grid ── */
+.letters-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(90px,1fr));
+  gap:10px;margin-bottom:40px;
+}
+
+/* ── Letter Card ── */
+.letter-card{
+  background:var(--white);border-radius:var(--radius-md);
+  padding:16px 10px 12px;text-align:center;cursor:pointer;
+  border:2px solid transparent;box-shadow:var(--shadow-sm);
+  transition:var(--transition);position:relative;overflow:hidden;
+  user-select:none;animation:fadeIn .4s ease both;
+}
+.letter-card::before{
+  content:'';position:absolute;inset:0;
+  background:var(--yellow);opacity:0;transition:opacity .2s;z-index:0;
+}
+.letter-card:hover            {transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.letter-card:hover::before    {opacity:.08}
+.letter-card:active           {transform:scale(.95)}
+.letter-card:focus-visible    {outline:3px solid var(--yellow);outline-offset:2px}
+.letter-card.played           {border-color:var(--green)}
+.letter-card.playing{
+  border-color:var(--yellow);background:#FFFBEA;
+  transform:scale(1.06);
+  box-shadow:0 0 0 4px rgba(255,217,61,.25),var(--shadow-md);
+}
+.letter-big{
+  display:block;font-family:var(--font-display);
+  font-size:2rem;font-weight:900;line-height:1;
+  color:var(--dark);position:relative;z-index:1;
+}
+.letter-name{
+  display:block;font-size:.68rem;font-weight:600;color:var(--muted);
+  margin-top:5px;text-transform:uppercase;letter-spacing:.5px;
+  position:relative;z-index:1;
+}
+.letter-check{
+  position:absolute;top:5px;right:7px;
+  font-size:.7rem;opacity:0;transition:opacity .3s;
+}
+.letter-card.played .letter-check{opacity:1}
+
+/* ── Special chars ── */
+.special-section{margin-top:8px;animation:fadeSlideUp .4s ease both}
+.special-heading{font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:6px}
+.special-desc{color:var(--muted);font-size:.88rem;margin-bottom:16px}
+.special-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+.special-grid .letter-card{
+  background:linear-gradient(135deg,#F3EFFF 0%,#E8F5FF 100%);
+  border-color:rgba(167,139,250,.35);
+}
+.special-grid .letter-card.playing{
+  border-color:var(--purple);background:#F0EBFF;
+  box-shadow:0 0 0 4px rgba(167,139,250,.25),var(--shadow-md);
+}
+
+/* ── Staggered entrance ── */
+.letter-card:nth-child(1) {animation-delay:.02s}
+.letter-card:nth-child(2) {animation-delay:.04s}
+.letter-card:nth-child(3) {animation-delay:.06s}
+.letter-card:nth-child(4) {animation-delay:.08s}
+.letter-card:nth-child(5) {animation-delay:.10s}
+.letter-card:nth-child(6) {animation-delay:.12s}
+.letter-card:nth-child(7) {animation-delay:.14s}
+.letter-card:nth-child(8) {animation-delay:.16s}
+.letter-card:nth-child(9) {animation-delay:.18s}
+.letter-card:nth-child(10){animation-delay:.20s}
+.letter-card:nth-child(11){animation-delay:.22s}
+.letter-card:nth-child(12){animation-delay:.24s}
+.letter-card:nth-child(13){animation-delay:.26s}
+.letter-card:nth-child(14){animation-delay:.28s}
+.letter-card:nth-child(15){animation-delay:.30s}
+.letter-card:nth-child(16){animation-delay:.32s}
+.letter-card:nth-child(17){animation-delay:.34s}
+.letter-card:nth-child(18){animation-delay:.36s}
+.letter-card:nth-child(19){animation-delay:.38s}
+.letter-card:nth-child(20){animation-delay:.40s}
+.letter-card:nth-child(21){animation-delay:.42s}
+.letter-card:nth-child(22){animation-delay:.44s}
+.letter-card:nth-child(23){animation-delay:.46s}
+.letter-card:nth-child(24){animation-delay:.48s}
+.letter-card:nth-child(25){animation-delay:.50s}
+.letter-card:nth-child(26){animation-delay:.52s}
+
+/* ── Responsive ── */
+@media(max-width:640px){
+  .lesson-main{padding:22px 14px 60px}
+  .letters-grid,.letters-skeleton{
+    grid-template-columns:repeat(auto-fill,minmax(72px,1fr));
+    gap:8px;
+  }
+  .letter-big{font-size:1.7rem}
+}

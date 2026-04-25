@@ -1,0 +1,142 @@
+/* ============================================
+   DEUTSCH LERNEN – numbers/numbers.css
+   ============================================ */
+
+.lesson-main{
+  position:relative;z-index:1;max-width:1000px;
+  margin:0 auto;padding:36px 24px 80px;width:100%;flex:1;
+}
+
+/* ── Header ── */
+.lesson-header{margin-bottom:28px}
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.85rem;font-weight:600;color:var(--muted);
+  padding:6px 0;margin-bottom:14px;transition:var(--transition);
+}
+.back-btn:hover{color:var(--dark)}
+.lesson-meta{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.lesson-icon{font-size:2.6rem;line-height:1}
+.lesson-title{
+  font-family:var(--font-display);
+  font-size:clamp(1.7rem,5vw,2.6rem);
+  font-weight:900;letter-spacing:-1.5px;line-height:1.1;
+}
+.lesson-subtitle{font-size:.88rem;color:var(--muted);margin-top:3px}
+
+/* ── Progress ── */
+.progress-wrap{
+  background:var(--white);border-radius:var(--radius-md);
+  padding:14px 18px;box-shadow:var(--shadow-sm);max-width:460px;
+}
+.progress-labels{
+  display:flex;justify-content:space-between;
+  font-size:.78rem;font-weight:600;color:var(--muted);margin-bottom:7px;
+}
+.progress-track{height:7px;background:#E8E8F0;border-radius:4px;overflow:hidden}
+.progress-fill{
+  height:100%;border-radius:4px;width:0%;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  transition:width .5s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── Now Playing ── */
+.now-playing{
+  display:flex;align-items:center;gap:10px;
+  background:var(--dark);border-radius:var(--radius-md);
+  padding:13px 22px;margin-bottom:28px;
+  box-shadow:var(--shadow-md);min-height:50px;
+  animation:fadeSlideDown .4s ease both;
+  --np-accent:#4ECDC4;
+}
+.np-icon{font-size:1.2rem;flex-shrink:0}
+.np-text{font-size:.9rem;font-weight:500;color:rgba(255,255,255,.72)}
+
+/* ── Skeleton ── */
+.numbers-skeleton{
+  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:12px;
+}
+.number-sk{height:110px}
+
+/* ── Numbers Grid ── */
+.numbers-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:12px;
+}
+
+/* ── Number Card ── */
+.num-card{
+  background:var(--white);border-radius:var(--radius-md);
+  padding:20px 14px 16px;text-align:center;cursor:pointer;
+  border:2px solid transparent;box-shadow:var(--shadow-sm);
+  transition:var(--transition);position:relative;overflow:hidden;
+  user-select:none;animation:fadeIn .4s ease both;
+}
+.num-card:hover           {transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.num-card:active          {transform:scale(.95)}
+.num-card:focus-visible   {outline:3px solid var(--blue);outline-offset:2px}
+.num-card.played          {border-color:var(--green)}
+.num-card.playing{
+  border-color:var(--blue);background:#EDFCFB;
+  transform:scale(1.06);
+  box-shadow:0 0 0 4px rgba(78,205,196,.25),var(--shadow-md);
+}
+.num-digit{
+  display:block;font-family:var(--font-display);
+  font-size:2.2rem;font-weight:900;line-height:1;
+  color:var(--dark);margin-bottom:6px;
+}
+.num-german{
+  display:block;font-family:var(--font-display);
+  font-size:.95rem;font-weight:700;color:var(--red);
+  letter-spacing:-.3px;margin-bottom:3px;
+}
+.num-english{display:block;font-size:.72rem;font-weight:500;color:var(--muted)}
+.num-check{
+  position:absolute;top:7px;right:9px;
+  font-size:.7rem;opacity:0;transition:opacity .3s;
+}
+.num-card.played .num-check{opacity:1}
+.num-bar{
+  position:absolute;bottom:0;left:0;right:0;
+  height:3px;border-radius:0 0 16px 16px;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  opacity:0;transition:opacity .2s;
+}
+.num-card.playing .num-bar{opacity:1}
+
+/* Staggered */
+.num-card:nth-child(1) {animation-delay:.02s}
+.num-card:nth-child(2) {animation-delay:.04s}
+.num-card:nth-child(3) {animation-delay:.06s}
+.num-card:nth-child(4) {animation-delay:.08s}
+.num-card:nth-child(5) {animation-delay:.10s}
+.num-card:nth-child(6) {animation-delay:.12s}
+.num-card:nth-child(7) {animation-delay:.14s}
+.num-card:nth-child(8) {animation-delay:.16s}
+.num-card:nth-child(9) {animation-delay:.18s}
+.num-card:nth-child(10){animation-delay:.20s}
+.num-card:nth-child(11){animation-delay:.22s}
+.num-card:nth-child(12){animation-delay:.24s}
+.num-card:nth-child(13){animation-delay:.26s}
+.num-card:nth-child(14){animation-delay:.28s}
+.num-card:nth-child(15){animation-delay:.30s}
+.num-card:nth-child(16){animation-delay:.32s}
+.num-card:nth-child(17){animation-delay:.34s}
+.num-card:nth-child(18){animation-delay:.36s}
+.num-card:nth-child(19){animation-delay:.38s}
+.num-card:nth-child(20){animation-delay:.40s}
+
+/* ── Responsive ── */
+@media(max-width:640px){
+  .lesson-main{padding:22px 14px 60px}
+  .numbers-grid,.numbers-skeleton{
+    grid-template-columns:repeat(auto-fill,minmax(100px,1fr));
+    gap:10px;
+  }
+}
+@media(max-width:380px){
+  .numbers-grid,.numbers-skeleton{grid-template-columns:repeat(2,1fr)}
+}

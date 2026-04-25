@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Die Farben – Deutsch Lernen</title>
+  <link rel="stylesheet" href="../base.css"/>
+  <link rel="stylesheet" href="colours.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="colours-page">
+
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-flag">🇩🇪</span>
+      <span class="logo-text">Deutsch<em>Lernen</em></span>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../alphabet/alphabet.html"  class="nav-link">Alphabet</a>
+      <a href="../numbers/numbers.html"   class="nav-link">Numbers</a>
+      <a href="../colours/colours.html"   class="nav-link active">Colours</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html" class="nav-link">🏠 Home</a>
+    <a href="../alphabet/alphabet.html"  class="nav-link">🔤 Alphabet</a>
+    <a href="../numbers/numbers.html"   class="nav-link">🔢 Numbers</a>
+    <a href="../colours/colours.html"   class="nav-link active">🎨 Colours</a>
+  </nav>
+
+  <main class="lesson-main">
+
+    <div class="lesson-header">
+      <a href="../index.html" class="back-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+      <div class="lesson-meta">
+        <span class="lesson-icon">🎨</span>
+        <div>
+          <h1 class="lesson-title">Die Farben</h1>
+          <p class="lesson-subtitle">Click any colour to hear it in German</p>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-labels">
+          <span>Progress</span>
+          <span id="progress-count">0 / 15</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="now-playing" id="now-playing" aria-live="polite">
+      <span id="np-icon" class="np-icon">🔊</span>
+      <span id="np-text" class="np-text">Click a colour to hear it!</span>
+    </div>
+
+    <!-- Skeleton -->
+    <div id="skeleton-colours" class="skeleton-grid colours-skeleton">
+      <div class="skeleton-card colour-sk"></div>
+      <div class="skeleton-card colour-sk"></div>
+      <div class="skeleton-card colour-sk"></div>
+      <div class="skeleton-card colour-sk"></div>
+      <div class="skeleton-card colour-sk"></div>
+      <div class="skeleton-card colour-sk"></div>
+      <div class="skeleton-card colour-sk"></div>
+      <div class="skeleton-card colour-sk"></div>
+    </div>
+
+    <!-- Real grid -->
+    <div id="real-colours" class="colours-grid" style="display:none"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ for German learners &nbsp;·&nbsp; <span id="year"></span></p>
+  </footer>
+
+  <script src="../app.js"></script>
+  <script src="colours.js"></script>
+</body>
+</html>
